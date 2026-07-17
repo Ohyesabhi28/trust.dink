@@ -2,7 +2,7 @@ import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '
 import { GraphBuilderService } from '../services/graph-builder.service';
 import { AuditLogService } from '../services/audit-log.service';
 
-@Injectable()
+@Injectable({ deps: [GraphBuilderService, AuditLogService] })
 export class BuildTrustGraphTool {
   constructor(
     @Inject(GraphBuilderService) private readonly graphBuilder: GraphBuilderService,

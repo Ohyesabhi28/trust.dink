@@ -2,7 +2,7 @@ import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '
 import { RiskEngineService } from '../services/risk-engine.service';
 import { AuditLogService } from '../services/audit-log.service';
 
-@Injectable()
+@Injectable({ deps: [RiskEngineService, AuditLogService] })
 export class ScoreRiskTool {
   constructor(
     @Inject(RiskEngineService) private readonly riskEngine: RiskEngineService,

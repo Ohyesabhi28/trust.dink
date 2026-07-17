@@ -3,7 +3,7 @@ import { MarketDataService } from '../services/market-data.service';
 import { ExchangeRateService } from '../services/exchange-rate.service';
 import { AuditLogService } from '../services/audit-log.service';
 
-@Injectable()
+@Injectable({ deps: [MarketDataService, ExchangeRateService, AuditLogService] })
 export class MarketContextTool {
   constructor(
     @Inject(MarketDataService) private readonly marketData: MarketDataService,

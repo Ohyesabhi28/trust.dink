@@ -1,7 +1,7 @@
 import { ResourceDecorator as Resource, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { MarketDataService } from '../services/market-data.service';
 
-@Injectable()
+@Injectable({ deps: [MarketDataService] })
 export class MarketDataResource {
   constructor(
     @Inject(MarketDataService) private readonly marketData: MarketDataService

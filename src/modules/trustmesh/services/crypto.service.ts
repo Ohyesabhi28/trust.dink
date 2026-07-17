@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { KeyStoreService } from './key-store.service';
 
-@Injectable()
+@Injectable({ deps: [KeyStoreService] })
 export class CryptoService {
   constructor(
     @Inject(KeyStoreService) private readonly keyStore: KeyStoreService

@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@nitrostack/core';
 import { RiskAssessment, RiskFactor, RiskRecommendation } from '../../../types';
 import { StateService } from './state.service';
 
-@Injectable()
+@Injectable({ deps: [StateService] })
 export class RiskEngineService {
   constructor(
     @Inject(StateService) private readonly state: StateService

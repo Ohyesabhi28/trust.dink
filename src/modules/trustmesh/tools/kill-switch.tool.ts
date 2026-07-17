@@ -3,7 +3,7 @@ import { StateService } from '../services/state.service';
 import { AuditLogService } from '../services/audit-log.service';
 import { KillSwitchEntry, KillSwitchAction, KillSwitchTargetType } from '../../../types';
 
-@Injectable()
+@Injectable({ deps: [StateService, AuditLogService] })
 export class KillSwitchTool {
   constructor(
     @Inject(StateService) private readonly stateService: StateService,

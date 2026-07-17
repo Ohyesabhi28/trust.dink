@@ -1,7 +1,7 @@
 import { ResourceDecorator as Resource, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { AuditLogService } from '../services/audit-log.service';
 
-@Injectable()
+@Injectable({ deps: [AuditLogService] })
 export class AuditLogResource {
   constructor(
     @Inject(AuditLogService) private readonly auditLog: AuditLogService

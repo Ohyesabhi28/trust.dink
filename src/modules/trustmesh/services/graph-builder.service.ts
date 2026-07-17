@@ -3,7 +3,7 @@ import { TrustGraph, TrustNode, TrustEdge, EdgeStatus } from '../../../types';
 import { StateService } from './state.service';
 import { CryptoService } from './crypto.service';
 
-@Injectable()
+@Injectable({ deps: [StateService, CryptoService] })
 export class GraphBuilderService {
   constructor(
     @Inject(StateService) private readonly state: StateService,
