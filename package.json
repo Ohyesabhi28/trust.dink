@@ -1,0 +1,48 @@
+{
+  "name": "trustmesh-mcp",
+  "version": "1.0.0",
+  "description": "TrustMesh — Agentic Payment Trust & Compliance Firewall. An MCP server that cryptographically verifies agent-signed transaction mandates, scores risk with explainable rules enriched by live NSE/BFSI market data, and provides a human-in-the-loop kill switch compliant with RBI's 2026 Model Risk Management guidelines.",
+  "author": "TrustMesh Team — Amrita University MCP Hackathon 2026",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nitrostack-cli dev",
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/index.js",
+    "deploy": "nitrostack-cli deploy --prod",
+    "generate-keypairs": "tsx scripts/generate-keypairs.ts",
+    "seed-demo": "tsx scripts/seed-demo.ts",
+    "setup": "npm run generate-keypairs && npm run seed-demo",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.tsx --max-warnings 0",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@nitrostack/core": "^1.0.13",
+    "@nitrostack/widgets": "^1.0.8",
+    "zod": "^3.22.4",
+    "next": "^15.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "d3-force": "^3.0.0",
+    "@types/d3-force": "^3.0.10",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@nitrostack/cli": "^1.0.14",
+    "typescript": "^5.4.5",
+    "tsx": "^4.19.1",
+    "rimraf": "^5.0.10",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@types/uuid": "^9.0.8",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0"
+  },
+  "engines": {
+    "node": ">=20.18.1"
+  }
+}
