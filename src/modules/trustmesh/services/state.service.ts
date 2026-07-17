@@ -5,7 +5,7 @@ import { KillSwitchEntry, Mandate } from '../../../types';
 
 @Injectable()
 export class StateService {
-  private stateFilePath = path.join(process.cwd(), 'data/runtime-state.json');
+  private stateFilePath = path.join(process.cwd(), '.data/runtime-state.json');
   private killSwitches: Map<string, KillSwitchEntry> = new Map();
   private transactions: Array<{
     transactionId: string;

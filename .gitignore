@@ -29,6 +29,7 @@ pnpm-debug.log*
 .envrc
 
 # TrustMesh Data & Secrets (Crucial: do not commit local generated keys/states/logs)
+.data/
 src/data/dev-private-keys.json
 src/data/runtime-state.json
 src/data/audit-log.json

@@ -1,7 +1,0 @@
-{
-  "key-issuer-mastercard": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIIpjggd5FB9zF1HQxaD3ctqYg8eyp/HH2aTqDLcVFf4P\n-----END PRIVATE KEY-----\n",
-  "key-issuer-visa": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIGFG0CgttTaEpJrGvbV5uTGR3LKFO9R7xfNAUqcdxS6j\n-----END PRIVATE KEY-----\n",
-  "key-agent-shopping-1": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIOKVgq4W86GdPee7k1H3Qw9nwNfDLhs5C29+HvUEpegR\n-----END PRIVATE KEY-----\n",
-  "key-agent-shopping-2": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIMgq9Mn/sw9Glkux/yMOm6DE2wHjG2Qc/9LCyrSlYm+U\n-----END PRIVATE KEY-----\n",
-  "key-merchant-amazon": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIFoy3KU034qyK2bc3HMHu9uPXNq9ziVgicyeocwpBEW5\n-----END PRIVATE KEY-----\n"
-}
