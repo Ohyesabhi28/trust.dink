@@ -96,4 +96,13 @@ export class KeyStoreService {
   public getAllKeys(): PublicKeyRecord[] {
     return Array.from(this.keys.values());
   }
+
+  public revokeKey(keyId: string): boolean {
+    const key = this.keys.get(keyId);
+    if (!key) return false;
+    
+    key.trusted = false;
+    this.saveKeys();
+    return true;
+  }
 }

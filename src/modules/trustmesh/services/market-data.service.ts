@@ -35,12 +35,28 @@ export class MarketDataService {
   private lastFetched: number = 0;
   private readonly CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
+  private isShocked: boolean = false;
+
+  public simulateShock(enabled: boolean): void {
+    this.isShocked = enabled;
+  }
+
   /**
    * Returns BFSI sector market data.
    * Attempts to pull live data from Yahoo Finance unofficial JSON endpoint.
    * Falls back to curated static data if the request fails.
    */
   public async getBfsiSectorData(): Promise<MarketSentiment[]> {
+    if (this.isShocked) {
+      return Object.values(this.FALLBACK_DATA).map(d => ({
+        ...d,
+        price: d.price * 0.8,
+        changePercent: -20.0,
+        change: - (d.price * 0.2),
+        timestamp: new Date().toISOString()
+      }));
+    }
+
     const now = Date.now();
     if (this.cachedData.length > 0 && now - this.lastFetched < this.CACHE_DURATION) {
       return this.cachedData;

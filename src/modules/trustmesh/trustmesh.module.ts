@@ -16,6 +16,10 @@ import { ScoreRiskTool } from './tools/score-risk.tool';
 import { BuildTrustGraphTool } from './tools/build-trust-graph.tool';
 import { KillSwitchTool } from './tools/kill-switch.tool';
 import { MarketContextTool } from './tools/market-context.tool';
+import { QueryAuditLedgerTool } from './tools/query-audit-ledger.tool';
+import { RevokeAgentKeysTool } from './tools/revoke-agent-keys.tool';
+import { SimulateMarketShockTool } from './tools/simulate-market-shock.tool';
+import { EscalateReviewTool } from './tools/escalate-review.tool';
 
 // Resources
 import { ComplianceRulesResource } from './resources/compliance-rules.resource';
@@ -40,6 +44,10 @@ import { IncidentBriefPrompt } from './prompts/incident-brief.prompt';
     BuildTrustGraphTool,
     KillSwitchTool,
     MarketContextTool,
+    QueryAuditLedgerTool,
+    RevokeAgentKeysTool,
+    SimulateMarketShockTool,
+    EscalateReviewTool,
     // ── Resources ──────────────────────────────────────────
     ComplianceRulesResource,
     FraudPatternsResource,
@@ -65,6 +73,10 @@ import { IncidentBriefPrompt } from './prompts/incident-brief.prompt';
     BuildTrustGraphTool,
     KillSwitchTool,
     MarketContextTool,
+    QueryAuditLedgerTool,
+    RevokeAgentKeysTool,
+    SimulateMarketShockTool,
+    EscalateReviewTool,
     // ── Resources (must be in providers for DI to inject into them) ──
     ComplianceRulesResource,
     FraudPatternsResource,
