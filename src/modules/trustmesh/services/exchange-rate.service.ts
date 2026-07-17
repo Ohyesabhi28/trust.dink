@@ -13,11 +13,26 @@ export class ExchangeRateService {
   private lastFetched: number = 0;
   private cacheDuration: number = 10 * 60 * 1000; // 10 minutes cache
 
+  private isShocked: boolean = false;
+
+  public simulateShock(enabled: boolean): void {
+    this.isShocked = enabled;
+  }
+
   /**
    * Fetches latest exchange rates from a public open API.
    * Fallback to hardcoded rates if network fails or offline.
    */
   public async getLatestRates(): Promise<Record<string, number>> {
+    if (this.isShocked) {
+      return {
+        USD: 120.00, // Massive devaluation of INR
+        EUR: 130.50,
+        GBP: 150.20,
+        INR: 1.00
+      };
+    }
+
     const now = Date.now();
     if (now - this.lastFetched < this.cacheDuration) {
       return this.cachedRates;

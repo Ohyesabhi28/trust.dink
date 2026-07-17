@@ -146,7 +146,7 @@ export interface TrustGraph {
 // ─────────────────────────────────────────────────────────────
 
 /** Actions that create audit log entries */
-export type AuditAction = 'verify' | 'score' | 'kill_switch' | 'trust_graph';
+export type AuditAction = 'verify' | 'score' | 'kill_switch' | 'trust_graph' | 'revoke' | 'escalate';
 
 /** An immutable audit log entry — append-only, never modified */
 export interface AuditLogEntry {

@@ -20,6 +20,8 @@ export class StateService {
   // Track mandates in transaction chains
   private mandates: Map<string, Mandate> = new Map();
 
+  private reviewQueue: Array<{ mandateId: string; reason: string; addedAt: string }> = [];
+
   constructor() {
     this.ensureDataDirectory();
     this.loadState();
@@ -37,8 +39,8 @@ export class StateService {
       try {
         const data = fs.readFileSync(this.stateFilePath, 'utf8');
         const parsed = JSON.parse(data);
-        
         this.transactions = parsed.transactions || [];
+        this.reviewQueue = parsed.reviewQueue || [];
         
         if (parsed.killSwitches) {
           for (const k in parsed.killSwitches) {
@@ -71,7 +73,8 @@ export class StateService {
     const data = {
       transactions: this.transactions,
       killSwitches: killSwitchesObj,
-      mandates: mandatesObj
+      mandates: mandatesObj,
+      reviewQueue: this.reviewQueue
     };
 
     fs.writeFileSync(this.stateFilePath, JSON.stringify(data, null, 2), 'utf8');
@@ -145,5 +148,22 @@ export class StateService {
 
   public getAllMandates(): Mandate[] {
     return Array.from(this.mandates.values());
+  }
+
+  // ─────────────────────────────────────────────────────────────
+  // Manual Review Queue
+  // ─────────────────────────────────────────────────────────────
+
+  public escalateToReview(mandateId: string, reason: string) {
+    this.reviewQueue.push({
+      mandateId,
+      reason,
+      addedAt: new Date().toISOString()
+    });
+    this.saveState();
+  }
+
+  public getReviewQueue() {
+    return this.reviewQueue;
   }
 }
