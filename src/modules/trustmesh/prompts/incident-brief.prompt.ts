@@ -1,5 +1,6 @@
-import { PromptDecorator as Prompt, ExecutionContext } from '@nitrostack/core';
+import { PromptDecorator as Prompt, ExecutionContext, Injectable } from '@nitrostack/core';
 
+@Injectable()
 export class IncidentBriefPrompt {
   @Prompt({
     name: 'incident_response_brief',

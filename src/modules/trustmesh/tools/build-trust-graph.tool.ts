@@ -1,7 +1,8 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { GraphBuilderService } from '../services/graph-builder.service';
 import { AuditLogService } from '../services/audit-log.service';
 
+@Injectable()
 export class BuildTrustGraphTool {
   constructor(
     @Inject(GraphBuilderService) private readonly graphBuilder: GraphBuilderService,

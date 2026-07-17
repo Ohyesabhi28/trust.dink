@@ -1,8 +1,9 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { MarketDataService } from '../services/market-data.service';
 import { ExchangeRateService } from '../services/exchange-rate.service';
 import { AuditLogService } from '../services/audit-log.service';
 
+@Injectable()
 export class MarketContextTool {
   constructor(
     @Inject(MarketDataService) private readonly marketData: MarketDataService,

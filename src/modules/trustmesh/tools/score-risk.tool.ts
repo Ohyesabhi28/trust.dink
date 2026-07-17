@@ -1,7 +1,8 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { RiskEngineService } from '../services/risk-engine.service';
 import { AuditLogService } from '../services/audit-log.service';
 
+@Injectable()
 export class ScoreRiskTool {
   constructor(
     @Inject(RiskEngineService) private readonly riskEngine: RiskEngineService,

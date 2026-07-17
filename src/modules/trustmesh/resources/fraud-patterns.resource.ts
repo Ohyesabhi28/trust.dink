@@ -1,6 +1,7 @@
-import { ResourceDecorator as Resource, ExecutionContext } from '@nitrostack/core';
+import { ResourceDecorator as Resource, ExecutionContext, Injectable } from '@nitrostack/core';
 import { FraudPattern } from '../../../types';
 
+@Injectable()
 export class FraudPatternsResource {
   // Pre-seeded mock fraud indicators
   private patterns: FraudPattern[] = [

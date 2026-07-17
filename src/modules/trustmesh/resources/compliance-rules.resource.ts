@@ -1,7 +1,8 @@
-import { ResourceDecorator as Resource, ExecutionContext } from '@nitrostack/core';
+import { ResourceDecorator as Resource, ExecutionContext, Injectable } from '@nitrostack/core';
 import * as fs from 'fs';
 import * as path from 'path';
 
+@Injectable()
 export class ComplianceRulesResource {
   private rulesPath = path.join(process.cwd(), 'src/data/rbi-sebi-rules.json');
 

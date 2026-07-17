@@ -1,8 +1,9 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { StateService } from '../services/state.service';
 import { AuditLogService } from '../services/audit-log.service';
 import { KillSwitchEntry, KillSwitchAction, KillSwitchTargetType } from '../../../types';
 
+@Injectable()
 export class KillSwitchTool {
   constructor(
     @Inject(StateService) private readonly stateService: StateService,

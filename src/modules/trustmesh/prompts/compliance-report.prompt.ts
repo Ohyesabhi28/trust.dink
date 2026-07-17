@@ -1,5 +1,6 @@
-import { PromptDecorator as Prompt, ExecutionContext } from '@nitrostack/core';
+import { PromptDecorator as Prompt, ExecutionContext, Injectable } from '@nitrostack/core';
 
+@Injectable()
 export class ComplianceReportPrompt {
   @Prompt({
     name: 'compliance_explanation_report',

@@ -50,6 +50,7 @@ import { IncidentBriefPrompt } from './prompts/incident-brief.prompt';
     IncidentBriefPrompt
   ],
   providers: [
+    // ── Services (injected into tools/resources/prompts) ───
     KeyStoreService,
     CryptoService,
     StateService,
@@ -57,7 +58,21 @@ import { IncidentBriefPrompt } from './prompts/incident-brief.prompt';
     GraphBuilderService,
     AuditLogService,
     MarketDataService,
-    ExchangeRateService
+    ExchangeRateService,
+    // ── Tools (must be in providers for DI to inject into them) ──
+    VerifyMandateTool,
+    ScoreRiskTool,
+    BuildTrustGraphTool,
+    KillSwitchTool,
+    MarketContextTool,
+    // ── Resources (must be in providers for DI to inject into them) ──
+    ComplianceRulesResource,
+    FraudPatternsResource,
+    AuditLogResource,
+    MarketDataResource,
+    // ── Prompts (must be in providers for DI to inject into them) ──
+    ComplianceReportPrompt,
+    IncidentBriefPrompt
   ],
   exports: [
     KeyStoreService,

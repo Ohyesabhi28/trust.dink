@@ -1,9 +1,10 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { CryptoService } from '../services/crypto.service';
 import { StateService } from '../services/state.service';
 import { AuditLogService } from '../services/audit-log.service';
 import { Mandate } from '../../../types';
 
+@Injectable()
 export class VerifyMandateTool {
   constructor(
     @Inject(CryptoService) private readonly cryptoService: CryptoService,
