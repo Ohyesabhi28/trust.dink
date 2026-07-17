@@ -4,7 +4,7 @@ import * as path from 'path';
 
 @Injectable()
 export class ComplianceRulesResource {
-  private rulesPath = path.join(process.cwd(), 'src/data/rbi-sebi-rules.json');
+  private rulesPath = path.join(process.cwd(), 'data/rbi-sebi-rules.json');
 
   @Resource({
     uri: 'compliance-rules://rbi-sebi',

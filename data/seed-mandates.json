@@ -1,0 +1,57 @@
+[
+  {
+    "id": "mandate-cart-amazon",
+    "type": "cart",
+    "payload": {
+      "merchant": "Amazon Web Stores",
+      "amount": 250,
+      "currency": "INR",
+      "items": [
+        {
+          "sku": "book-mrm-2026",
+          "qty": 1,
+          "name": "RBI Model Risk Management Guide"
+        }
+      ],
+      "issuedAt": "2026-07-17T08:36:15.868Z"
+    },
+    "signature": "Dco/jDccK0nU13Fe8S2e0ES3fEJ10XVfWf2FrG7de2fhiKOac3KIGxjXUxQoNBy0T0CLwPjddHXXn6SDShQYDA==",
+    "signerPublicKeyId": "key-agent-shopping-1",
+    "issuedAt": "2026-07-17T08:36:15.868Z"
+  },
+  {
+    "id": "mandate-cart-tampered",
+    "type": "cart",
+    "payload": {
+      "merchant": "Amazon Web Stores",
+      "amount": 25000,
+      "currency": "INR",
+      "items": [
+        {
+          "sku": "book-mrm-2026",
+          "qty": 1,
+          "name": "RBI Model Risk Management Guide"
+        }
+      ],
+      "issuedAt": "2026-07-17T08:36:15.868Z"
+    },
+    "signature": "Dco/jDccK0nU13Fe8S2e0ES3fEJ10XVfWf2FrG7de2fhiKOac3KIGxjXUxQoNBy0T0CLwPjddHXXn6SDShQYDA==",
+    "signerPublicKeyId": "key-agent-shopping-1",
+    "issuedAt": "2026-07-17T08:36:15.868Z"
+  },
+  {
+    "id": "mandate-payment-amazon",
+    "type": "payment",
+    "payload": {
+      "cartMandateId": "mandate-cart-amazon",
+      "merchant": "Amazon Web Stores",
+      "amount": 250,
+      "currency": "INR",
+      "clearingChannel": "UPI-Mastercard-AgentPay",
+      "issuedAt": "2026-07-17T08:36:15.869Z"
+    },
+    "signature": "V/YouQ2bHuP+s2/o5tBK95qD0eCCAa9UvH/0jhVNxs5oFMeCno+mwYwxn47bQz81g3pBTeKEt4A5rQdBZ5fWCg==",
+    "signerPublicKeyId": "key-issuer-mastercard",
+    "issuedAt": "2026-07-17T08:36:15.869Z"
+  }
+]

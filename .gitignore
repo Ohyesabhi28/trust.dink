@@ -8,6 +8,8 @@ build/
 .vercel
 .next/
 out/
+src/widgets/out/
+src/widgets/.next/
 
 # Logs
 logs/

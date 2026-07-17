@@ -6,7 +6,7 @@ import { AuditLogEntry, AuditAction } from '../../../types';
 
 @Injectable()
 export class AuditLogService {
-  private logFilePath = path.join(process.cwd(), 'src/data/audit-log.json');
+  private logFilePath = path.join(process.cwd(), 'data/audit-log.json');
   private logs: AuditLogEntry[] = [];
 
   constructor() {

@@ -7,7 +7,7 @@ import { PublicKeyRecord } from '../../../types';
 @Injectable()
 export class KeyStoreService {
   private keys: Map<string, PublicKeyRecord> = new Map();
-  private keypairsPath = path.join(process.cwd(), 'src/data/seed-keypairs.json');
+  private keypairsPath = path.join(process.cwd(), 'data/seed-keypairs.json');
 
   constructor() {
     this.ensureDataDirectory();
@@ -67,7 +67,7 @@ export class KeyStoreService {
       generated.push(record);
 
       // Save a private key copy in development directory
-      const devPath = path.join(process.cwd(), 'src/data/dev-private-keys.json');
+      const devPath = path.join(process.cwd(), 'data/dev-private-keys.json');
       let devKeys: Record<string, string> = {};
       if (fs.existsSync(devPath)) {
         try { devKeys = JSON.parse(fs.readFileSync(devPath, 'utf8')); } catch { /* ignore parse errors, start fresh */ }

@@ -1,0 +1,160 @@
+{
+  "transactions": [
+    {
+      "transactionId": "tx_1y2vo30wd",
+      "amount": 250,
+      "merchantCategory": "Amazon Web Stores",
+      "agentId": "key-agent-shopping-1",
+      "requestGeo": "DEL",
+      "userHomeGeo": "DEL",
+      "timestamp": "2026-07-17T08:36:40.980Z"
+    },
+    {
+      "transactionId": "tx_v8inax2km",
+      "amount": 250,
+      "merchantCategory": "Amazon Web Stores",
+      "agentId": "key-agent-shopping-1",
+      "requestGeo": "DEL",
+      "userHomeGeo": "DEL",
+      "timestamp": "2026-07-17T08:59:05.527Z"
+    },
+    {
+      "transactionId": "tx_94hlyd5wg",
+      "amount": 250,
+      "merchantCategory": "Online Retail",
+      "agentId": "agent-shopping-1",
+      "requestGeo": "IN-MH",
+      "userHomeGeo": "IN-MH",
+      "timestamp": "2026-07-17T09:01:06.386Z"
+    }
+  ],
+  "killSwitches": {
+    "transaction:txn_test_001": {
+      "targetType": "transaction",
+      "targetId": "txn_test_001",
+      "action": "suspend",
+      "reason": "Test override for tool verification",
+      "actorId": "compliance-officer-test",
+      "appliedAt": "2026-07-17T09:01:06.964Z",
+      "auditLogEntryId": "d5d67a0a-f0df-45e2-8faa-0f20b0327a59"
+    }
+  },
+  "mandates": {
+    "man_hz9nxk3br": {
+      "id": "man_hz9nxk3br",
+      "type": "cart",
+      "payload": {
+        "merchant": "Amazon Web Stores",
+        "amount": 250,
+        "currency": "INR",
+        "items": [
+          {
+            "sku": "book-mrm-2026",
+            "qty": 1,
+            "name": "RBI Model Risk Management Guide"
+          }
+        ],
+        "issuedAt": "2026-07-17T08:36:15.868Z"
+      },
+      "signature": "Dco/jDccK0nU13Fe8S2e0ES3fEJ10XVfWf2FrG7de2fhiKOac3KIGxjXUxQoNBy0T0CLwPjddHXXn6SDShQYDA==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T08:36:15.868Z"
+    },
+    "man_c28iw8nxi": {
+      "id": "man_c28iw8nxi",
+      "type": "cart",
+      "payload": {
+        "merchant": "Amazon Web Stores",
+        "amount": 25000,
+        "currency": "INR",
+        "items": [
+          {
+            "sku": "book-mrm-2026",
+            "qty": 1,
+            "name": "RBI Model Risk Management Guide"
+          }
+        ],
+        "issuedAt": "2026-07-17T08:36:15.868Z"
+      },
+      "signature": "Dco/jDccK0nU13Fe8S2e0ES3fEJ10XVfWf2FrG7de2fhiKOac3KIGxjXUxQoNBy0T0CLwPjddHXXn6SDShQYDA==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T08:36:15.868Z"
+    },
+    "man_n8yyammzn": {
+      "id": "man_n8yyammzn",
+      "type": "cart",
+      "payload": {
+        "merchant": "Amazon Web Stores",
+        "amount": 250,
+        "currency": "INR",
+        "items": [
+          {
+            "sku": "book-mrm-2026",
+            "qty": 1,
+            "name": "RBI Model Risk Management Guide"
+          }
+        ],
+        "issuedAt": "2026-07-17T08:36:15.868Z"
+      },
+      "signature": "Dco/jDccK0nU13Fe8S2e0ES3fEJ10XVfWf2FrG7de2fhiKOac3KIGxjXUxQoNBy0T0CLwPjddHXXn6SDShQYDA==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T08:36:15.868Z"
+    },
+    "man_nxy3rdqwb": {
+      "id": "man_nxy3rdqwb",
+      "type": "cart",
+      "payload": {
+        "merchant": "Amazon Web Stores",
+        "amount": 25000,
+        "currency": "INR",
+        "items": [
+          {
+            "sku": "book-mrm-2026",
+            "qty": 1,
+            "name": "RBI Model Risk Management Guide"
+          }
+        ],
+        "issuedAt": "2026-07-17T08:36:15.868Z"
+      },
+      "signature": "Dco/jDccK0nU13Fe8S2e0ES3fEJ10XVfWf2FrG7de2fhiKOac3KIGxjXUxQoNBy0T0CLwPjddHXXn6SDShQYDA==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T08:36:15.868Z"
+    },
+    "man_uyd1udgph": {
+      "id": "man_uyd1udgph",
+      "type": "payment",
+      "payload": {
+        "merchant": "Amazon Web Stores",
+        "amount": 250,
+        "currency": "INR",
+        "items": [
+          {
+            "sku": "book-mrm-2026",
+            "qty": 1,
+            "name": "RBI Model Risk Management Guide"
+          }
+        ],
+        "issuedAt": "2026-07-17T07:18:43.105Z"
+      },
+      "signature": "pxKoW5y2XAUqqoHJVtu40acnWQON83dFBsTidVVQQRzEM5AhdjaMpSHpmO9/xysa3ELVK3aSilEh/gn1QxIBDw==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T07:18:43.105Z"
+    },
+    "man_6913nymni": {
+      "id": "man_6913nymni",
+      "type": "cart",
+      "payload": "{     \"merchant\": \"Amazon Web Stores\",     \"amount\": 250,     \"currency\": \"INR\",     \"items\": [       {         \"sku\": \"book-mrm-2026\",         \"qty\": 1,         \"name\": \"RBI Model Risk Management Guide\"       }     ],     \"issuedAt\": \"2026-07-17T07:18:43.105Z\"   }",
+      "signature": "\"pxKoW5y2XAUqqoHJVtu40acnWQON83dFBsTidVVQQRzEM5AhdjaMpSHpmO9/xysa3ELVK3aSilEh/gn1QxIBDw==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T09:31:49.336Z"
+    },
+    "man_90i3bhvl0": {
+      "id": "man_90i3bhvl0",
+      "type": "cart",
+      "payload": "{     \"merchant\": \"Amazon Web Stores\",     \"amount\": 250,     \"currency\": \"INR\",     \"items\": [       {         \"sku\": \"book-mrm-2026\",         \"qty\": 1,         \"name\": \"RBI Model Risk Management Guide\"       }     ],     \"issuedAt\": \"2026-07-17T07:18:43.105Z\"   }",
+      "signature": "\"pxKoW5y2XAUqqoHJVtu40acnWQON83dFBsTidVVQQRzEM5AhdjaMpSHpmO9/xysa3ELVK3aSilEh/gn1QxIBDw==",
+      "signerPublicKeyId": "key-agent-shopping-1",
+      "issuedAt": "2026-07-17T09:31:51.571Z"
+    }
+  }
+}
