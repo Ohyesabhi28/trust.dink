@@ -1,0 +1,69 @@
+{
+  "widgets": [
+    {
+      "id": "trust-graph-widget",
+      "name": "Trust Graph Visualizer",
+      "description": "Interactive cryptographic mandate chain visualization. Inspect agent-signed transaction links and trace the full trust path.",
+      "component": "TrustGraphWidget",
+      "path": "./app/trust-graph/page.tsx",
+      "toolBinding": "build_trust_graph",
+      "inputs": {
+        "transactionId": {
+          "type": "string",
+          "description": "Transaction ID to visualize"
+        }
+      }
+    },
+    {
+      "id": "risk-dashboard-widget",
+      "name": "Risk Intelligence Dashboard",
+      "description": "Explainable risk scoring output. View composite risk scores, triggered factors, and AI recommendations.",
+      "component": "RiskDashboardWidget",
+      "path": "./app/risk-dashboard/page.tsx",
+      "toolBinding": "score_transaction_risk",
+      "inputs": {
+        "transactionId": { "type": "string", "description": "Transaction ID to score" },
+        "amount": { "type": "number", "description": "Transaction amount in INR" },
+        "agentId": { "type": "string", "description": "Agent key ID" }
+      }
+    },
+    {
+      "id": "verify-mandate-widget",
+      "name": "Mandate Verifier",
+      "description": "Cryptographic Ed25519 signature verification for payment mandates. Shows real-time pass/fail with tamper detection.",
+      "component": "VerifyMandateWidget",
+      "path": "./app/verify-mandate/page.tsx",
+      "toolBinding": "verify_mandate",
+      "inputs": {
+        "mandateType": { "type": "string", "description": "Type of mandate: intent, cart, or payment" },
+        "payload": { "type": "object", "description": "Mandate payload object" },
+        "signature": { "type": "string", "description": "Base64-encoded Ed25519 signature" },
+        "signerPublicKeyId": { "type": "string", "description": "Public key ID of the signer" }
+      }
+    },
+    {
+      "id": "kill-switch-widget",
+      "name": "Kill Switch Panel",
+      "description": "RBI MRM 2026-compliant human-in-the-loop override panel. Instantly suspend or resume agents, mandates, or transactions.",
+      "component": "KillSwitchWidget",
+      "path": "./app/kill-switch/page.tsx",
+      "toolBinding": "kill_switch_override",
+      "inputs": {
+        "action": { "type": "string", "description": "Action: suspend, resume, or query" },
+        "targetType": { "type": "string", "description": "Target type: agent, mandate, or transaction" },
+        "targetId": { "type": "string", "description": "ID of the target to act on" }
+      }
+    },
+    {
+      "id": "market-context-widget",
+      "name": "Live Market Context",
+      "description": "Live NSE BFSI sector snapshot. Macro risk enrichment signals used by the risk engine to calibrate transaction thresholds.",
+      "component": "MarketContextWidget",
+      "path": "./app/market-context/page.tsx",
+      "toolBinding": "get_live_market_context",
+      "inputs": {
+        "symbols": { "type": "array", "description": "Optional list of NSE symbols to fetch" }
+      }
+    }
+  ]
+}

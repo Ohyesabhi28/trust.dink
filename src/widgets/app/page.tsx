@@ -18,6 +18,25 @@ const ShieldIcon = () => (
   </svg>
 );
 
+const KeyIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+  </svg>
+);
+
+const PowerIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10" />
+  </svg>
+);
+
+const MarketIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+    <polyline points="17 6 23 6 23 12" />
+  </svg>
+);
+
 const COLORS = {
   bg: '#f8f9fa',
   panel: '#ffffff',
@@ -41,6 +60,24 @@ const widgets = [
     description: 'Explainable risk scoring engine output. View composite risk scores, triggered factor breakdown, and AI-generated recommendations (approve / review / block).',
     href: '/widgets/risk-dashboard',
     icon: <ShieldIcon />,
+  },
+  {
+    title: 'Mandate Verifier',
+    description: 'Cryptographic Ed25519 signature verification for payment mandates. Inspect real-time pass/fail checks, tamper detection, and key metadata.',
+    href: '/widgets/verify-mandate',
+    icon: <KeyIcon />,
+  },
+  {
+    title: 'Kill Switch Panel',
+    description: 'RBI MRM 2026-compliant human-in-the-loop override panel. Suspend or resume transacting capability of agents, mandates, and transactions.',
+    href: '/widgets/kill-switch',
+    icon: <PowerIcon />,
+  },
+  {
+    title: 'Market Context',
+    description: 'Live NSE BFSI sector snapshot. Market sentiment metrics used by the risk engine to calibrate dynamic transaction safety thresholds.',
+    href: '/widgets/market-context',
+    icon: <MarketIcon />,
   },
 ];
 

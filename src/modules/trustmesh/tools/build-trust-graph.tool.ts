@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
 import { GraphBuilderService } from '../services/graph-builder.service';
 import { AuditLogService } from '../services/audit-log.service';
 
@@ -16,6 +16,7 @@ export class BuildTrustGraphTool {
       transactionId: z.string().describe('The transaction identifier to build trust validation sequence for')
     })
   })
+  @Widget('trust-graph')
   async buildTrustGraph(
     input: { transactionId: string },
     ctx: ExecutionContext

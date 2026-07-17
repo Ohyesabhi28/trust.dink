@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
 import { RiskEngineService } from '../services/risk-engine.service';
 import { AuditLogService } from '../services/audit-log.service';
 
@@ -23,6 +23,7 @@ export class ScoreRiskTool {
       signatureInvalid: z.boolean().optional().describe('Pre-evaluated signature verification flag (true if invalid)')
     })
   })
+  @Widget('risk-dashboard')
   async scoreTransaction(
     input: {
       mandateId: string;

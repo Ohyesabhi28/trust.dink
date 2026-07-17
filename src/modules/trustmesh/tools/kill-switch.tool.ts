@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
 import { StateService } from '../services/state.service';
 import { AuditLogService } from '../services/audit-log.service';
 import { KillSwitchEntry, KillSwitchAction, KillSwitchTargetType } from '../../../types';
@@ -21,6 +21,7 @@ export class KillSwitchTool {
       actorId: z.string().describe('Compliance officer ID enacting override')
     })
   })
+  @Widget('kill-switch')
   async killSwitchOverride(
     input: {
       targetType: KillSwitchTargetType;

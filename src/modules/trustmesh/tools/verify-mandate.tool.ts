@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
 import { CryptoService } from '../services/crypto.service';
 import { StateService } from '../services/state.service';
 import { AuditLogService } from '../services/audit-log.service';
@@ -22,6 +22,7 @@ export class VerifyMandateTool {
       signerPublicKeyId: z.string().describe('Key ID representing the signer public key registry entry')
     })
   })
+  @Widget('verify-mandate')
   async verifyMandate(
     input: {
       mandateType: 'intent' | 'cart' | 'payment';

@@ -1,6 +1,4 @@
-import { defineConfig } from '@nitrostack/core';
-
-export default defineConfig({
+export default {
   name: 'trustmesh-mcp',
   version: '1.0.0',
   description:
@@ -36,4 +34,4 @@ export default defineConfig({
     region: 'ap-south-1', // Mumbai — lowest latency for RBI-regulated workloads
     env: ['NODE_ENV', 'LOG_LEVEL', 'RISK_BLOCK_THRESHOLD', 'RISK_REVIEW_THRESHOLD']
   }
-});
+};

@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
 import { MarketDataService } from '../services/market-data.service';
 import { ExchangeRateService } from '../services/exchange-rate.service';
 import { AuditLogService } from '../services/audit-log.service';
@@ -35,6 +35,7 @@ export class MarketContextTool {
         .describe('If true, returns a sector sentiment signal that can increase or decrease risk weights.')
     })
   })
+  @Widget('market-context')
   async getMarketContext(
     input: {
       transactionCurrency?: string;
