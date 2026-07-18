@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { KeyStoreService } from '../services/key-store.service';
 import { AuditLogService } from '../services/audit-log.service';
 
@@ -18,7 +18,6 @@ export class RevokeAgentKeysTool {
       actorId: z.string().describe('Compliance officer ID enacting revocation')
     })
   })
-  @Widget('revoke-keys')
   async revokeAgentKeys(
     input: {
       keyId: string;
