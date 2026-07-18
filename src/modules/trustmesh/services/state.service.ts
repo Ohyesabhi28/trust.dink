@@ -1,11 +1,12 @@
 import { Injectable } from '@nitrostack/core';
+import * as os from 'os';
 import * as fs from 'fs';
 import * as path from 'path';
 import { KillSwitchEntry, Mandate } from '../../../types';
 
 @Injectable()
 export class StateService {
-  private stateFilePath = path.join(process.cwd(), '.data/runtime-state.json');
+  private stateFilePath = path.join(os.tmpdir(), 'trustmesh-data/runtime-state.json');
   private killSwitches: Map<string, KillSwitchEntry> = new Map();
   private transactions: Array<{
     transactionId: string;

@@ -1,4 +1,5 @@
 import { Injectable } from '@nitrostack/core';
+import * as os from 'os';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -7,7 +8,7 @@ import { PublicKeyRecord } from '../../../types';
 @Injectable()
 export class KeyStoreService {
   private keys: Map<string, PublicKeyRecord> = new Map();
-  private keypairsPath = path.join(process.cwd(), '.data/seed-keypairs.json');
+  private keypairsPath = path.join(os.tmpdir(), 'trustmesh-data/seed-keypairs.json');
 
   constructor() {
     this.ensureDataDirectory();
@@ -67,13 +68,15 @@ export class KeyStoreService {
       generated.push(record);
 
       // Save a private key copy in development directory
-      const devPath = path.join(process.cwd(), '.data/dev-private-keys.json');
-      let devKeys: Record<string, string> = {};
-      if (fs.existsSync(devPath)) {
-        try { devKeys = JSON.parse(fs.readFileSync(devPath, 'utf8')); } catch { /* ignore parse errors, start fresh */ }
+      if (process.env.NODE_ENV !== 'production') {
+        const devPath = path.join(os.tmpdir(), 'trustmesh-data/dev-private-keys.json');
+        let devKeys: Record<string, string> = {};
+        if (fs.existsSync(devPath)) {
+          try { devKeys = JSON.parse(fs.readFileSync(devPath, 'utf8')); } catch { /* ignore parse errors, start fresh */ }
+        }
+        devKeys[k.id] = privateKey;
+        fs.writeFileSync(devPath, JSON.stringify(devKeys, null, 2), 'utf8');
       }
-      devKeys[k.id] = privateKey;
-      fs.writeFileSync(devPath, JSON.stringify(devKeys, null, 2), 'utf8');
     }
 
     fs.writeFileSync(this.keypairsPath, JSON.stringify(generated, null, 2), 'utf8');
