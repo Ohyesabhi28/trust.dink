@@ -8,7 +8,8 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nitrostack-cli dev",
-    "build": "tsc --project tsconfig.json",
+    "build": "tsc --project tsconfig.json && npm run build:widgets",
+    "build:widgets": "cd src/widgets && npm install && npm run build",
     "start": "node dist/index.js",
     "deploy": "nitrostack-cli deploy --prod",
     "generate-keypairs": "tsx scripts/generate-keypairs.ts",
