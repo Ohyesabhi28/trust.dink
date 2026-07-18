@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
 import { StateService } from '../services/state.service';
 import { AuditLogService } from '../services/audit-log.service';
 
@@ -17,6 +17,7 @@ export class EscalateReviewTool {
       reason: z.string().describe('Mandatory reason for manual review routing')
     })
   })
+  @Widget('escalate-review')
   async escalateToManualReview(
     input: {
       mandateId: string;
