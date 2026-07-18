@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { MarketDataService } from '../services/market-data.service';
 import { ExchangeRateService } from '../services/exchange-rate.service';
 
@@ -16,7 +16,6 @@ export class SimulateMarketShockTool {
       enabled: z.boolean().describe('Set to true to activate shock, false to restore normal live data')
     })
   })
-  @Widget('market-shock')
   async simulateMarketShock(
     input: {
       enabled: boolean;

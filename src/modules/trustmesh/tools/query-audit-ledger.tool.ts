@@ -1,4 +1,4 @@
-import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable, Widget } from '@nitrostack/core';
+import { ToolDecorator as Tool, z, ExecutionContext, Inject, Injectable } from '@nitrostack/core';
 import { AuditLogService } from '../services/audit-log.service';
 
 @Injectable({ deps: [AuditLogService] })
@@ -17,7 +17,6 @@ export class QueryAuditLedgerTool {
       actorId: z.string().optional().describe('Filter by specific actor ID')
     })
   })
-  @Widget('audit-ledger')
   async queryAuditLedger(
     input: {
       startDate?: string;
