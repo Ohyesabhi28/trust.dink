@@ -37,6 +37,30 @@ const MarketIcon = () => (
   </svg>
 );
 
+const ListIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line>
+  </svg>
+);
+
+const LockIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+  </svg>
+);
+
+const AlertIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <polygon points="12 2 22 20 2 20 12 2"></polygon><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line>
+  </svg>
+);
+
+const QueueIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+  </svg>
+);
+
 const COLORS = {
   bg: '#f8f9fa',
   panel: '#ffffff',
@@ -78,6 +102,30 @@ const widgets = [
     description: 'Live NSE BFSI sector snapshot. Market sentiment metrics used by the risk engine to calibrate dynamic transaction safety thresholds.',
     href: '/widgets/market-context',
     icon: <MarketIcon />,
+  },
+  {
+    title: 'Audit Ledger',
+    description: 'Immutable transaction and agent action logs. Inspect queries, modifications, and system events with full cryptographic hashes.',
+    href: '/widgets/audit-ledger',
+    icon: <ListIcon />,
+  },
+  {
+    title: 'Revoke Agent Keys',
+    description: 'Instantly revoke a compromised agent key to prevent further signatures. Records reason and actor ID to compliance logs.',
+    href: '/widgets/revoke-keys',
+    icon: <LockIcon />,
+  },
+  {
+    title: 'Market Shock Simulator',
+    description: 'Overrides live NSE data to test extreme volatility handling in the risk engine.',
+    href: '/widgets/market-shock',
+    icon: <AlertIcon />,
+  },
+  {
+    title: 'Escalate to Review',
+    description: 'Routes a borderline transaction into the human compliance queue, bypassing automated risk engine clearance.',
+    href: '/widgets/escalate-review',
+    icon: <QueueIcon />,
   },
 ];
 

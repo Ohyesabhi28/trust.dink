@@ -1,4 +1,5 @@
 import { Injectable, Inject } from '@nitrostack/core';
+import * as os from 'os';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -76,7 +77,7 @@ export class CryptoService {
    * Internal utility to sign payload if private key file is present.
    */
   public signWithKeyId(payload: Record<string, unknown>, keyId: string): string {
-    const devPath = path.join(process.cwd(), '.data/dev-private-keys.json');
+    const devPath = path.join(os.tmpdir(), 'trustmesh-data/dev-private-keys.json');
     if (!fs.existsSync(devPath)) {
       throw new Error(`Private key repository not found. Cannot sign payload.`);
     }

@@ -1,4 +1,5 @@
 import { Injectable } from '@nitrostack/core';
+import * as os from 'os';
 import * as crypto from 'crypto';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -6,7 +7,7 @@ import { AuditLogEntry, AuditAction } from '../../../types';
 
 @Injectable()
 export class AuditLogService {
-  private logFilePath = path.join(process.cwd(), '.data/audit-log.json');
+  private logFilePath = path.join(os.tmpdir(), 'trustmesh-data/audit-log.json');
   private logs: AuditLogEntry[] = [];
 
   constructor() {

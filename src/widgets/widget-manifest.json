@@ -64,6 +64,56 @@
       "inputs": {
         "symbols": { "type": "array", "description": "Optional list of NSE symbols to fetch" }
       }
+    },
+    {
+      "id": "audit-ledger-widget",
+      "name": "Audit Ledger",
+      "description": "Immutable transaction and agent action logs. Inspect queries, modifications, and system events.",
+      "component": "AuditLedgerWidget",
+      "path": "./app/audit-ledger/page.tsx",
+      "toolBinding": "query_audit_ledger",
+      "inputs": {
+        "action": { "type": "string", "description": "Filter by action type" },
+        "startDate": { "type": "string", "description": "Filter by start date" },
+        "endDate": { "type": "string", "description": "Filter by end date" },
+        "actorId": { "type": "string", "description": "Filter by actor ID" }
+      }
+    },
+    {
+      "id": "revoke-keys-widget",
+      "name": "Revoke Agent Keys",
+      "description": "Instantly revoke a compromised agent key to prevent further signatures.",
+      "component": "RevokeKeysWidget",
+      "path": "./app/revoke-keys/page.tsx",
+      "toolBinding": "revoke_agent_keys",
+      "inputs": {
+        "keyId": { "type": "string", "description": "Target key ID to revoke" },
+        "reason": { "type": "string", "description": "Reason for revocation" },
+        "actorId": { "type": "string", "description": "Actor ID performing the revocation" }
+      }
+    },
+    {
+      "id": "market-shock-widget",
+      "name": "Market Shock Simulator",
+      "description": "Overrides live NSE data to test extreme volatility handling in the risk engine.",
+      "component": "MarketShockWidget",
+      "path": "./app/market-shock/page.tsx",
+      "toolBinding": "simulate_market_shock",
+      "inputs": {
+        "enabled": { "type": "boolean", "description": "Set to true to activate shock" }
+      }
+    },
+    {
+      "id": "escalate-review-widget",
+      "name": "Manual Review Escalation",
+      "description": "Routes a borderline transaction into the human compliance queue.",
+      "component": "EscalateReviewWidget",
+      "path": "./app/escalate-review/page.tsx",
+      "toolBinding": "escalate_to_manual_review",
+      "inputs": {
+        "mandateId": { "type": "string", "description": "Mandate ID to escalate" },
+        "reason": { "type": "string", "description": "Reason for escalation" }
+      }
     }
   ]
 }
